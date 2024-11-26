@@ -1,0 +1,79 @@
+﻿@model IEnumerable<VehicleRentalSystem.Models.Rental>
+
+<h2>Manage Rentals</h2>
+
+<!-- Add Rental Form -->
+<h4>Add New Rental</h4>
+<form asp-action="Create" method="post">
+    <div>
+        <label for="CustomerID">Customer:</label>
+        <select id="CustomerID" name="CustomerID">
+            @foreach (var customer in ViewData["Customers"] as IEnumerable<VehicleRentalSystem.Models.Customer>)
+            {
+                <option value="@customer.CustomerID">@customer.CustomerName</option>
+            }
+        </select>
+    </div>
+    <div>
+        <label for="VehicleID">Vehicle:</label>
+        <select id="VehicleID" name="VehicleID">
+            @foreach (var vehicle in ViewData["Vehicles"] as IEnumerable<VehicleRentalSystem.Models.Vehicle>)
+            {
+                <option value="@vehicle.VehicleID">@vehicle.VehicleName</option>
+            }
+        </select>
+    </div>
+    <div>
+        <label for="RentalDate">Rental Date:</label>
+        <input type="date" id="RentalDate" name="RentalDate" required />
+    </div>
+    <div>
+        <label for="ReturnDate">Return Date:</label>
+        <input type="date" id="ReturnDate" name="ReturnDate" required />
+    </div>
+    <button type="submit">Add Rental</button>
+</form>
+
+<hr />
+
+<!-- List Rentals -->
+<h4>Rentals List</h4>
+<table>
+    <thead>
+        <tr>
+            <th>Customer</th>
+            <th>Vehicle</th>
+            <th>Rental Date</th>
+            <th>Return Date</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var rental in Model)
+        {
+            <tr>
+                <td>@rental.Customer.CustomerName</td>
+                <td>@rental.Vehicle.VehicleName</td>
+                <td>@rental.RentalDate.ToShortDateString()</td>
+                <td>@rental.ReturnDate.ToShortDateString()</td>
+                <td>
+                    <!-- Edit Form -->
+                    <form asp-action="Edit" method="post" style="display:inline;">
+                        <input type="hidden" name="RentalID" value="@rental.RentalID" />
+                        <input type="hidden" name="CustomerID" value="@rental.CustomerID" />
+                        <input type="hidden" name="VehicleID" value="@rental.VehicleID" />
+                        <input type="date" name="RentalDate" value="@rental.RentalDate.ToString("yyyy-MM-dd")" required />
+                        <input type="date" name="ReturnDate" value="@rental.ReturnDate.ToString("yyyy-MM-dd")" required />
+                        <button type="submit">Update</button>
+                    </form>
+
+                    <!-- Delete Form -->
+                    <form asp-action="Delete" method="post" style="display:inline;">
+                        <input type="hidden" name="RentalID" value="@rental.RentalID" />
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

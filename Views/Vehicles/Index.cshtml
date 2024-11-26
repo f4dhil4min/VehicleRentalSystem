@@ -1,0 +1,361 @@
+﻿@model IEnumerable<VehicleRentalSystem.Models.Vehicle>
+
+<div class="container mb-5">
+    <link rel="stylesheet" href="~/css/site.css" />
+    <h2 class="text-center mb-4 available-cars-title">Available Vehicles</h2>
+    <div class="row mb-5">
+        <!-- Card 1 -->
+        <div class="col-md-4 mb-4">
+            <div class="card" style="background-color: #f9f9f9; border: 1px solid #e0e0e0;">
+                <img src="~/images/merc.jpg" alt="Mercedes-Benz E-Class" class="vehicle-preview" />
+                <div class="card-body text-center">
+                    <h5 class="card-title">Mercedes-Benz E-Class</h5>
+                    <p class="card-text">Luxury sedan with advanced safety features and unmatched comfort.</p>
+                    <p class="card-text"><strong>Rental Fee:</strong> RM 400/day</p>
+                    <button class="btn btn-primary" onclick="populateForm('Mercedes-Benz E-Class', 'Car', 400)">Add Vehicle</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-md-4 mb-4">
+            <div class="card" style="background-color: #f9f9f9; border: 1px solid #e0e0e0;">
+                <img src="~/images/supra.jpg" alt="Toyota Supra" class="vehicle-preview" />
+                <div class="card-body text-center">
+                    <h5 class="card-title">Toyota Supra</h5>
+                    <p class="card-text">A legendary sports car known for its speed and iconic design.</p>
+                    <p class="card-text"><strong>Rental Fee:</strong> RM 500/day</p>
+                    <button class="btn btn-primary" onclick="populateForm('Toyota Supra', 'Car', 500)">Add Vehicle</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-md-4 mb-4">
+            <div class="card" style="background-color: #f9f9f9; border: 1px solid #e0e0e0;">
+                <img src="~/images/harley.jpg" alt="Harley Davidson" class="vehicle-preview" />
+                <div class="card-body text-center">
+                    <h5 class="card-title">Harley Davidson</h5>
+                    <p class="card-text">A classic cruiser motorcycle for those who love the open road.</p>
+                    <p class="card-text"><strong>Rental Fee:</strong> RM 350/day</p>
+                    <button class="btn btn-primary" onclick="populateForm('Harley Davidson', 'Motorcycle', 350)">Add Vehicle</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="col-md-4 mb-4">
+            <div class="card" style="background-color: #f9f9f9; border: 1px solid #e0e0e0;">
+                <img src="~/images/car-bmw.jpg" alt="BMW X5" class="vehicle-preview" />
+                <div class="card-body text-center">
+                    <h5 class="card-title">BMW X5</h5>
+                    <p class="card-text">A luxury SUV that combines style, performance, and functionality.</p>
+                    <p class="card-text"><strong>Rental Fee:</strong> RM 450/day</p>
+                    <button class="btn btn-primary" onclick="populateForm('BMW X5', 'SUV', 450)">Add Vehicle</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="col-md-4 mb-4">
+            <div class="card" style="background-color: #f9f9f9; border: 1px solid #e0e0e0;">
+                <img src="~/images/car-honda.jpg" alt="Honda Civic" class="vehicle-preview" />
+                <div class="card-body text-center">
+                    <h5 class="card-title">Honda Civic</h5>
+                    <p class="card-text">A reliable and fuel-efficient sedan for everyday travel needs.</p>
+                    <p class="card-text"><strong>Rental Fee:</strong> RM 200/day</p>
+                    <button class="btn btn-primary" onclick="populateForm('Honda Civic', 'Car', 200)">Add Vehicle</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="col-md-4 mb-4">
+            <div class="card" style="background-color: #f9f9f9; border: 1px solid #e0e0e0;">
+                <img src="~/images/car-ford.jpg" alt="Ford Mustang" class="vehicle-preview" />
+                <div class="card-body text-center">
+                    <h5 class="card-title">Ford Mustang</h5>
+                    <p class="card-text">A muscle car delivering powerful performance and iconic style.</p>
+                    <p class="card-text"><strong>Rental Fee:</strong> RM 450/day</p>
+                    <button class="btn btn-primary" onclick="populateForm('Ford Mustang', 'Car', 450)">Add Vehicle</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="col-md-4 mb-4">
+            <div class="card" style="background-color: #f9f9f9; border: 1px solid #e0e0e0;">
+                <img src="~/images/motorcycle-ducati.jpg" alt="Ducati Panigale" class="vehicle-preview" />
+                <div class="card-body text-center">
+                    <h5 class="card-title">Ducati Panigale</h5>
+                    <p class="card-text">A high-performance motorcycle for adrenaline junkies.</p>
+                    <p class="card-text"><strong>Rental Fee:</strong> RM 400/day</p>
+                    <button class="btn btn-primary" onclick="populateForm('Ducati Panigale', 'Motorcycle', 400)">Add Vehicle</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="col-md-4 mb-4">
+            <div class="card" style="background-color: #f9f9f9; border: 1px solid #e0e0e0;">
+                <img src="~/images/car-toyota-suv.jpg" alt="Toyota RAV4" class="vehicle-preview" />
+                <div class="card-body text-center">
+                    <h5 class="card-title">Toyota RAV4</h5>
+                    <p class="card-text">A compact SUV perfect for family trips and outdoor adventures.</p>
+                    <p class="card-text"><strong>Rental Fee:</strong> RM 300/day</p>
+                    <button class="btn btn-primary" onclick="populateForm('Toyota RAV4', 'SUV', 300)">Add Vehicle</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 9 -->
+        <div class="col-md-4 mb-4">
+            <div class="card" style="background-color: #f9f9f9; border: 1px solid #e0e0e0;">
+                <img src="~/images/car-tesla.jpg" alt="Tesla Model 3" class="vehicle-preview" />
+                <div class="card-body text-center">
+                    <h5 class="card-title">Tesla Model 3</h5>
+                    <p class="card-text">An all-electric sedan with cutting-edge technology and efficiency.</p>
+                    <p class="card-text"><strong>Rental Fee:</strong> RM 550/day</p>
+                    <button class="btn btn-primary" onclick="populateForm('Tesla Model 3', 'Car', 550)">Add Vehicle</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Manage Vehicles Section -->
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Manage Vehicles</h2>
+        <div class="card p-5 rounded" style="background-color: white; border: 2px solid #f9f9f9;">
+            <h3 class="text-center text-dark mb-4">Add Vehicle</h3>
+            <form id="addVehicleForm" asp-action="Create" method="post" onsubmit="return handleAddVehicleSubmit(event)">
+                <div class="mb-3">
+                    <label for="VehicleName" class="form-label text-dark">Vehicle Name</label>
+                    <input type="text" id="VehicleName" name="VehicleName" class="form-control" placeholder="Enter vehicle name" required />
+                </div>
+                <div class="mb-3">
+                    <label for="VehicleType" class="form-label text-dark">Vehicle Type</label>
+                    <input type="text" id="VehicleType" name="VehicleType" class="form-control" placeholder="Enter vehicle type (e.g., Car, Motorcycle)" required />
+                </div>
+                <div class="mb-3">
+                    <label for="RentalRate" class="form-label text-dark">Rental Rate (RM)</label>
+                    <input type="number" id="RentalRate" name="RentalRate" class="form-control" placeholder="Enter rental rate per day" required />
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary btn-gradient">Add Vehicle</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <hr />
+
+    <!-- List of Vehicles -->
+    <h4 class="text-center mb-4">Vehicles List</h4>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead style="background: linear-gradient(to right, #66ccff, #99ccff); color: #fff;">
+                <tr>
+                    <th class="text-center">Name</th>
+                    <th class="text-center">Type</th>
+                    <th class="text-center">Rental Rate</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var vehicle in Model)
+                {
+                    <tr style="background-color: #f9f9f9;">
+                        <td class="align-middle text-center">@vehicle.VehicleName</td>
+                        <td class="align-middle text-center">@vehicle.VehicleType</td>
+                        <td class="align-middle text-center">RM @vehicle.RentalRate</td>
+                        <td class="text-center align-middle">
+                            <div class="d-flex justify-content-center align-items-center gap-2">
+                                <!-- Update Form -->
+                                <form id="updateForm-@vehicle.VehicleID" asp-action="Edit" method="post" class="d-inline">
+                                    <input type="hidden" name="VehicleID" value="@vehicle.VehicleID" />
+                                    <div class="form-group">
+                                        <input type="text" name="VehicleName" class="form-control mb-2" value="@vehicle.VehicleName" required />
+                                        <input type="text" name="VehicleType" class="form-control mb-2" value="@vehicle.VehicleType" required />
+                                        <input type="number" name="RentalRate" class="form-control mb-2" value="@vehicle.RentalRate" step="0.01" required />
+                                        <button type="button" class="btn btn-success btn-sm w-100" onclick="confirmUpdate(@vehicle.VehicleID)">Update</button>
+                                    </div>
+                                </form>
+
+                                <!-- Delete Form -->
+                                <form id="deleteForm-@vehicle.VehicleID" asp-action="Delete" method="post" class="d-inline">
+                                    <input type="hidden" name="VehicleID" value="@vehicle.VehicleID" />
+                                    <button type="button" class="btn btn-danger btn-sm w-100" onclick="confirmDelete(@vehicle.VehicleID)">Delete</button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+
+
+<script>
+    function populateForm(name, type, rate) {
+        // Populate the form fields with the selected vehicle data
+        document.getElementById('VehicleName').value = name;
+        document.getElementById('VehicleType').value = type;
+        document.getElementById('RentalRate').value = rate;
+
+        // Scroll to the Add Vehicle form
+        document.getElementById('addVehicleForm').scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+    <script>
+        // Handle form submission with SweetAlert
+        function handleAddVehicleSubmit(event) {
+            event.preventDefault(); // Prevent form from reloading the page
+
+            const form = document.getElementById('addVehicleForm');
+            const formData = new FormData(form);
+
+            // Example POST request to the server (update the URL to match your backend action)
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+            })
+                .then(response => {
+                    if (response.ok) {
+                        // Show SweetAlert popup
+                        Swal.fire({
+                            title: 'Success!',
+                            text: 'The vehicle was successfully added.',
+                            icon: 'success',
+                            confirmButtonText: 'OK'
+                        });
+                        // Optionally, reset the form fields
+                        form.reset();
+                    } else {
+                        // Handle errors
+                        Swal.fire({
+                            title: 'Error!',
+                            text: 'Failed to add the vehicle. Please try again.',
+                            icon: 'error',
+                            confirmButtonText: 'OK'
+                        });
+                    }
+                })
+                .catch(error => {
+                    // Handle network or other errors
+                    Swal.fire({
+                        title: 'Error!',
+                        text: 'An unexpected error occurred.',
+                        icon: 'error',
+                        confirmButtonText: 'OK'
+                    });
+                });
+
+            return false; // Prevent default form submission
+        }
+    </script>
+    <script>
+        // Confirm Update with SweetAlert
+        function confirmUpdate(vehicleID) {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You are about to update this vehicle!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, update it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    const form = document.getElementById(`updateForm-${vehicleID}`);
+
+                    fetch(form.action, {
+                        method: 'POST',
+                        body: new FormData(form)
+                    })
+                        .then(response => {
+                            if (response.ok) {
+                                Swal.fire({
+                                    title: 'Success!',
+                                    text: 'The Vehicle List was successfully updated.',
+                                    icon: 'success',
+                                    confirmButtonText: 'OK'
+                                }).then(() => {
+                                    location.reload(); // Reload page after update
+                                });
+                            } else {
+                                Swal.fire({
+                                    title: 'Error!',
+                                    text: 'Failed to update the vehicle. Please try again.',
+                                    icon: 'error',
+                                    confirmButtonText: 'OK'
+                                });
+                            }
+                        })
+                        .catch(() => {
+                            Swal.fire({
+                                title: 'Error!',
+                                text: 'An unexpected error occurred.',
+                                icon: 'error',
+                                confirmButtonText: 'OK'
+                            });
+                        });
+                }
+            });
+        }
+
+        // Confirm Delete with SweetAlert
+        function confirmDelete(vehicleID) {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "This action cannot be undone!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    const form = document.getElementById(`deleteForm-${vehicleID}`);
+
+                    fetch(form.action, {
+                        method: 'POST',
+                        body: new FormData(form)
+                    })
+                        .then(response => {
+                            if (response.ok) {
+                                Swal.fire({
+                                    title: 'Success!',
+                                    text: 'The Vehicle List was successfully deleted.',
+                                    icon: 'success',
+                                    confirmButtonText: 'OK'
+                                }).then(() => {
+                                    form.closest('tr').remove(); // Remove row dynamically
+                                });
+                            } else {
+                                Swal.fire({
+                                    title: 'Error!',
+                                    text: 'Failed to delete the vehicle. Please try again.',
+                                    icon: 'error',
+                                    confirmButtonText: 'OK'
+                                });
+                            }
+                        })
+                        .catch(() => {
+                            Swal.fire({
+                                title: 'Error!',
+                                text: 'An unexpected error occurred.',
+                                icon: 'error',
+                                confirmButtonText: 'OK'
+                            });
+                        });
+                }
+            });
+        }
+    </script>
+

@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Revenue Report";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center">REVENUE REPORT</h2>
+    <table class="table table-bordered mt-4">
+        <thead class="gradient-bg text-white">
+            <tr>
+                <th>Customer Name</th>
+                <th>Phone Number</th>
+                <th>Vehicle Name</th>
+                <th>Rental Rate (RM)</th>
+                <th>Total Days Rented</th>
+                <th>Total Revenue (RM)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in ViewData["RevenueReport"] as dynamic)
+            {
+                <tr>
+                    <td>@item.CustomerName</td>
+                    <td>@item.PhoneNumber</td>
+                    <td>@item.VehicleName</td>
+                    <td>@item.RentalRate.ToString("0.00")</td>
+                    <td>@item.TotalDaysRented</td>
+                    <td>@item.TotalRevenue.ToString("0.00")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
